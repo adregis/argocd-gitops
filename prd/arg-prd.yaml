@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1beta1
 kind: ArgoCD
 metadata:
-  name: argocd-prd
-  namespace: openshift-gitops
+  name: argocd-prod
+  namespace: demo-project
 spec:
   server:
     autoscale:
