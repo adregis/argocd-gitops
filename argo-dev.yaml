@@ -1,0 +1,21 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: argocd-dev-server
+  namespace: openshift-operators
+  labels:
+    app.kubernetes.io/managed-by: argocd-dev
+    app.kubernetes.io/name: argocd-dev-server
+    app.kubernetes.io/part-of: argocd
+spec:
+  host: argocd-dev-server-openshift-operators.apps.cluster-dpgwr.dynamic.redhatworkshops.io
+  to:
+    kind: Service
+    name: argocd-dev-server
+    weight: 100
+  port:
+    targetPort: https
+  tls:
+    termination: reencrypt
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
