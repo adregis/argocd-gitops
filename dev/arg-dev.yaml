@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1beta1
 kind: ArgoCD
 metadata:
   name: argocd-dev
-  namespace: argocd-dev
+  namespace: demo-project
 spec:
   server:
     autoscale:
