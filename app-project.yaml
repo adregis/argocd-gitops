@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: myapp-argo
+  namespace: demo-project # Deve estar aqui!
+spec:
+  # Permite que a Application seja lida deste namespace
+  sourceNamespaces:
+  - myapp-argo
+  # Permite que os recursos sejam instalados neste namespace
+  destinations:
+  - namespace: myapp-argo
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - '*'
